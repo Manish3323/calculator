@@ -16,5 +16,8 @@ Calculator passes following requirements:
 - collect all negative numbers before throwing exception
 
 To run tests:
-> npm install
-> npm run test
+
+```shell
+$> npm install
+$> npm run test
+```
