@@ -1,7 +1,10 @@
 export const calculateSum = (numbers: string) => {
   const containsDelimiter = numbers.startsWith("//");
-  const delimiter = containsDelimiter ? numbers.at(3) || "," : ",";
-  const input = containsDelimiter ? numbers.substring(5) : numbers;
+  //assuming pattern //[delimiter] hence magic number 3 & 5
+  const delimiterIndex = 3
+  const inputStartIndex = 5
+  const delimiter = containsDelimiter ? numbers.at(delimiterIndex) || "," : ",";
+  const input = containsDelimiter ? numbers.substring(inputStartIndex) : numbers;
 
   const either: { left: number[]; right: number[] } = { left: [], right: [] };
   input
@@ -15,6 +18,6 @@ export const calculateSum = (numbers: string) => {
 
   if (either.left.length > 0)
     throw new Error(`negative numbers not allowed ${either.left.join(",")}`);
-  
+
   return either.right.reduce((x: number, sum: number) => x + sum, 0);
 };
