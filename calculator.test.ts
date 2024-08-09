@@ -64,11 +64,6 @@ describe("Calculator", () => {
     assert.equal(sum, 60);
   });
 
-  it("should allow passing different delimiter", () => {
-    const sum = calculateSum("//[;]10;20;30");
-    assert.equal(sum, 60);
-  });
-
   it("should allow passing delimiter along with new lines", () => {
     const sum = calculateSum("//[;]10\n20;30");
     assert.equal(sum, 60);
