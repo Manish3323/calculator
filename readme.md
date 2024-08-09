@@ -7,9 +7,8 @@ Calculator passes following requirements:
 - add 3 string numbers with variation
 - return 0 if empty string is passed as input
 - return same number if single string is passed as input
-- handle new lines 
-- allow passing delimiter at the start of input 
-- allow passing different delimiter
+- handle new lines
+- allow passing delimiter at the start of input
 - allow passing different delimiter
 - allow passing delimiter along with new lines
 - throw exception if negative numbers are passed as an input

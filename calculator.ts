@@ -12,7 +12,7 @@ export const calculateSum = (numbers: string) => {
     negatives: [],
     normals: [],
   };
-  input
+  const maybeResult = input
     .replace("\n", delimiter)
     .split(delimiter)
     .reduce((e, x) => {
@@ -21,10 +21,10 @@ export const calculateSum = (numbers: string) => {
       return e;
     }, either);
 
-  if (either.negatives.length > 0)
+  if (maybeResult.negatives.length > 0)
     throw new Error(
-      `negative numbers not allowed ${either.negatives.join(",")}`
+      `negative numbers not allowed ${maybeResult.negatives.join(",")}`
     );
 
-  return either.normals.reduce((x: number, sum: number) => x + sum, 0);
+  return maybeResult.normals.reduce((x: number, sum: number) => x + sum, 0);
 };
